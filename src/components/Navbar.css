@@ -21,12 +21,13 @@ nav ul {
   gap: 24px;  
 }
 
-nav span{
+.nav__link{
   color: yellow;
   text-decoration: none;
-  cursor: pointer;
+  font-size: 24px;
+  cursor: pointer;  
 }
 
-nav span:hover {
+.nav__link:hover {
   color: blue;
 }

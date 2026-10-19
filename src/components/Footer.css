@@ -1,0 +1,20 @@
+
+
+.footer__img--wrapper {
+  width: 200px;
+  height: 140px;
+}
+
+.footer__sub-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.footer__links {
+  list-style: none;
+  line-height: 2;
+}
