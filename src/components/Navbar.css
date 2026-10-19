@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 16px 32px;
+  border-bottom: 2px solid grey;
+  background: black;  
+  margin: 0 auto;
+}
+
+nav img {
+  width: 150px;
+  filter: grayscale(1) invert(1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;  
+}
+
+nav span{
+  color: yellow;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav span:hover {
+  color: blue;
+}

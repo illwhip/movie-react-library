@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Moives = () => {
+const Movies = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Moives = () => {
   )
 }
 
-export default Moives
+export default Movies
