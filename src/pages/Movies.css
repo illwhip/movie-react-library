@@ -110,12 +110,11 @@
 }
 
 .movie__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1100px;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 .movie__card {  
