@@ -1,3 +1,22 @@
+footer {
+  padding-bottom: 24px;
+}
+
+.row {
+  width: 100%;
+  background-color: black;
+  color: yellow;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
 
 .footer__img--wrapper {
@@ -17,4 +36,27 @@
 .footer__links {
   list-style: none;
   line-height: 2;
+  margin-bottom: 24px;
+}
+
+.footer__link {
+  text-decoration: none;
+  font-size: 24px;
+  color: yellow;
+}
+
+.footer__link:hover {
+  color: blue;
+}
+
+@media (max-width: 768px) {
+
+  .footer__sub-container {
+    flex-direction: column-reverse;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 32px;
+  }
 }
