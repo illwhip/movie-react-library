@@ -11,8 +11,8 @@ const Movies = () => {
   return (
     <>
     <header>
-    <div className="row movies__row">
-      <div className="container movies__container">
+    <div className="movies__row">
+      <div className="movies__container">
         <div className="movies__sub-container">
           <h1 className="header__title"><span className="text--color">Batman</span> Filmology</h1>
           <p>Discover all the <span className="text--color">Batman</span> movies from each generation, the actors that made them great and the various styles with which the Dark Knight has been portayed.</p>
@@ -48,9 +48,7 @@ const Movies = () => {
         </div>    
       </div>
       <div className="divider"></div>
-      <div className="loading__state">
-        <i className="fa-solid fa-spinner"></i>
-      </div>
+      
     </div>
   </section>
   </>

@@ -10,3 +10,7 @@
 body {
   background: black;
 }
+
+.text--color {
+  color: blue;
+}

@@ -17,7 +17,7 @@ const Home = () => {
           <img className="header__img" src={all_batman_actors} alt="Faces of Batman" />
         </figure>
         <div className="header__sub-container">
-          <p className="header--para">All your Batman movies a click away.</p>
+          <p className="header--para">All your <span className='text--color'>Batman</span>  movies a click away.</p>
           <Link className="special__link" to="/pages/Movies">
             <button className="header__btn">
               <img className="header__btn--img" src={batman_symbol_1} alt='' />

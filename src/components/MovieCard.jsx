@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import './MovieCard.css'
 
 const MovieCard = () => {
 
@@ -20,6 +21,7 @@ const MovieCard = () => {
 
   
   return (
+
     <div className="movie">
       {loading ?  
       moviesData.map((movies) => (
@@ -31,7 +33,10 @@ const MovieCard = () => {
           <p>Release Date: <b>{movies.Year}</b></p>
         </div> 
       ))
-       : "turkey and cheese"}
+       :  <div className="loading__state">
+            <i className="fa-solid fa-spinner"></i>
+          </div>
+      }
     </div>  
   )
 }
