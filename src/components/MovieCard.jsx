@@ -20,7 +20,7 @@ const MovieCard = () => {
   
   return (
     <div className="movie">
-      {/* {moviesData.Search.map((movies) => (
+      {moviesData.Search.map((movies) => (
         <div className="movie__card">
           <figure className="movie__cover--wrapper">
             <img className="movie__cover" src={movies.Poster} alt="Movie Cover" />
@@ -28,7 +28,7 @@ const MovieCard = () => {
           <h4 className="movie__title">{movies.Title}</h4>
           <p>Release Date: <b>{movies.Year}</b></p>
         </div> 
-      ))} */}
+      ))}
     </div>  
   )
 }
