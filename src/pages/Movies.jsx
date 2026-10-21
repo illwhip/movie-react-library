@@ -11,21 +11,14 @@ const Movies = () => {
   
   const [moviesData, setMoviesData] = useState([])
   const [loading, setLoading] = useState(false)
-  const [movieSearch, setMovieSearch] = useState()
+  const [movieSearch, setMovieSearch] = useState('batman')
 
   
 
-  async function fetchMovies(movieSearch) {
+  async function fetchMovies(movieSearch, filter) {
     const { data } = await axios.get(`https://www.omdbapi.com/?apikey=6aff4282&s=${movieSearch}`)
     setMoviesData(data.Search)
-    setLoading(true)
-  }
-
-  async function renderMovies(filter) {
-    setLoading(false)
-    const { data } = await axios.get(`https://www.omdbapi.com/?apikey=6aff4282&s=batman`)
-    setMoviesData(data.Search)
-      
+        
     if (filter === false) {
     }
     else if (filter === 'FIRST_TO_LAST') {
@@ -53,8 +46,8 @@ const Movies = () => {
 
   useEffect(()=>{
     setTimeout(() => {
-      renderMovies()
-    }, 2000);
+      fetchMovies()
+    }, 1000);
     // eslint-disable-next-line
   }, [])
 
@@ -83,7 +76,7 @@ const Movies = () => {
       </div>
       <div className="search">        
         <button className="back__btn" onClick={() => navigate('/')}>← Back</button>        
-        <select id="filter" defaultValue="DEFAULT" onChange={(event) => renderMovies(event.target.value)}>
+        <select id="filter" defaultValue="DEFAULT" onChange={(event) => fetchMovies(event.target.value)}>
           <option value="DEFAULT" disabled>Sort</option>
           <option value="FIRST_TO_LAST">Oldest</option>
           <option value="LAST_TO_FIRST">Newest</option>
