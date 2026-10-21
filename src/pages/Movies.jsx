@@ -11,7 +11,7 @@ const Movies = () => {
   
   const [moviesData, setMoviesData] = useState([])
   const [loading, setLoading] = useState(false)
-  const [movieSearch, setMovieSearch] = useState('batman')
+  const [movieSearch, setMovieSearch] = useState()
 
   
 
@@ -21,9 +21,19 @@ const Movies = () => {
     setLoading(true)
   }
 
-  async function renderMovies() {
+  async function renderMovies(filter) {
+    setLoading(false)
     const { data } = await axios.get(`https://www.omdbapi.com/?apikey=6aff4282&s=batman`)
     setMoviesData(data.Search)
+      
+    if (filter === false) {
+    }
+    else if (filter === 'FIRST_TO_LAST') {
+    setMoviesData(moviesData.sort((a, b) => a.Year - b.Year));
+    }
+    else if (filter === 'LAST_TO_FIRST') {
+    setMoviesData(moviesData.sort((a, b) => b.Year - a.Year));
+    }     
     setLoading(true)
   }
 
@@ -49,16 +59,8 @@ const Movies = () => {
   }, [])
 
 
-  function filterMovies(filter) {
-    if (filter === false) {
-    }
-    else if (filter === 'FIRST_TO_LAST') {
-    setMoviesData(moviesData.sort((a, b) => a.Year - b.Year));
-    }
-    else if (filter === 'LAST_TO_FIRST') {
-    setMoviesData(moviesData.sort((a, b) => b.Year - a.Year));
-    } 
-  }
+
+  
 
   
   return (
@@ -81,7 +83,7 @@ const Movies = () => {
       </div>
       <div className="search">        
         <button className="back__btn" onClick={() => navigate('/')}>← Back</button>        
-        <select id="filter" defaultValue="DEFAULT" onChange={(event) => filterMovies(event.target.value)}>
+        <select id="filter" defaultValue="DEFAULT" onChange={(event) => renderMovies(event.target.value)}>
           <option value="DEFAULT" disabled>Sort</option>
           <option value="FIRST_TO_LAST">Oldest</option>
           <option value="LAST_TO_FIRST">Newest</option>
