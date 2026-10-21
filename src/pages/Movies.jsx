@@ -15,19 +15,24 @@ const Movies = () => {
 
   
 
-  async function fetchMovies() {
+  async function fetchMovies(movieSearch) {
     const { data } = await axios.get(`https://www.omdbapi.com/?apikey=6aff4282&s=${movieSearch}`)
     setMoviesData(data.Search)
     setLoading(true)
   }
 
-  
+  async function renderMovies() {
+    const { data } = await axios.get(`https://www.omdbapi.com/?apikey=6aff4282&s=batman`)
+    setMoviesData(data.Search)
+    setLoading(true)
+  }
 
   function createMovieCards () {
+    setLoading(false)
     let inputField = document.getElementById("userInput");
-    let value = inputField.value;
+    let value = inputField.value;    
     setMovieSearch(value)
-    fetchMovies()
+    fetchMovies(movieSearch)
   }
 
   function searchMovies (key) {    
@@ -38,21 +43,21 @@ const Movies = () => {
 
   useEffect(()=>{
     setTimeout(() => {
-      createMovieCards()
+      renderMovies()
     }, 2000);
     // eslint-disable-next-line
-  }, [moviesData])
+  }, [])
 
 
   function filterMovies(filter) {
-  if (filter === false) {
-  }
-  else if (filter === 'FIRST_TO_LAST') {
-  setMoviesData(moviesData.sort((a, b) => a.Year - b.Year));
-  }
-  else if (filter === 'LAST_TO_FIRST') {
-  setMoviesData(moviesData.sort((a, b) => b.Year - a.Year));
-  }  
+    if (filter === false) {
+    }
+    else if (filter === 'FIRST_TO_LAST') {
+    setMoviesData(moviesData.sort((a, b) => a.Year - b.Year));
+    }
+    else if (filter === 'LAST_TO_FIRST') {
+    setMoviesData(moviesData.sort((a, b) => b.Year - a.Year));
+    } 
   }
 
   
