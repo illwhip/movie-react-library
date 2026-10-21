@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import './MovieCard.css'
 
-const MovieCard = () => {
+const MovieCard = ({ moviesData, loading }) => {
 
 
-  const [moviesData, setMoviesData] = useState([])
-  const [loading, setLoading] = useState(false)
-
-
-  async function fetchMovies() {
-    const { data } = await axios.get('https://www.omdbapi.com/?apikey=6aff4282&s=batman')
-    setMoviesData(data.Search)
-    setLoading(true)
-  }
-
-  useEffect(()=>{
-    fetchMovies()
-  }, [])
-
-  
   return (
 
     <div className="movie">
@@ -42,3 +26,4 @@ const MovieCard = () => {
 }
 
 export default MovieCard
+ 

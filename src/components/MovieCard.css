@@ -1,6 +1,8 @@
 .movie {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  position: relative;
+  
 }
 
 .movie__card {  
@@ -17,41 +19,26 @@
   margin: 16px 24px;
 }
 
-
-
 .movie__title {
   font-size: 24px;
   padding-bottom: 8px;
 }
 
-@media (max-width: 1000px) {
-
-  .movie {
-    grid-template-columns: auto auto auto;
-  }
-
-}
-
 
 .loading__state {
-  position: absolute;
   width: 100%;
   height: 100%;
   background-color: #222265;
   display: flex;
   justify-content: center;
-  z-index: -2;
-  visibility: hidden;
+  z-index: 2;
+  visibility: visible;
   padding: 164px;
   font-size: 60px;
 }
 
-.loading__state--visible {
-  visibility: visible;
-  z-index: 2;
-}
-
 .fa-spinner {
+  font-size: 60px;
   animation: rotate 900ms infinite linear;
 }
 
@@ -66,6 +53,13 @@
 }
 
 
+@media (max-width: 1000px) {
+
+  .movie {
+    grid-template-columns: auto auto auto;
+  }
+
+}
 
 @media (max-width: 768px) {
 
