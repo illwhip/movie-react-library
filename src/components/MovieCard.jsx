@@ -8,7 +8,7 @@ const MovieCard = ({ moviesData, loading }) => {
 
     <div className="movie">
       {loading ?  
-      moviesData.map((movies) => (
+      moviesData.slice(0, 6).map((movies) => (
         <div key={movies.imdbID} className="movie__card">
           <figure className="movie__cover--wrapper">
             <img className="movie__cover" src={movies.Poster} alt="Movie Cover" />
